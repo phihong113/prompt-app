@@ -78,10 +78,13 @@ Xuống dòng mỗi bài và có dòng line, kèm số thứ tự...`;
       .then(text => setLessonPlanPrompt(text))
       .catch(err => console.error(err));
 
-    fetch("/Prompt_loi_Truyen_tranh.txt")
-      .then(res => res.text())
+    fetch("/Prompt loi Truyen tranh.txt")
+      .then(res => {
+        if (!res.ok) throw new Error("Network response was not ok");
+        return res.text();
+      })
       .then(text => setComicPrompt(text))
-      .catch(err => console.error(err));
+      .catch(err => console.error("Error fetching comic prompt:", err));
   }, []);
 
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
