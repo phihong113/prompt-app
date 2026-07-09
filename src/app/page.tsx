@@ -78,7 +78,7 @@ Xuống dòng mỗi bài và có dòng line, kèm số thứ tự...`;
       .then(text => setLessonPlanPrompt(text))
       .catch(err => console.error(err));
 
-    fetch("/Prompt loi Truyen tranh.txt")
+    fetch("/Prompt_Truyen_Tranh.txt")
       .then(res => {
         if (!res.ok) throw new Error("Network response was not ok");
         return res.text();
