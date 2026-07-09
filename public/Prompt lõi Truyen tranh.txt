@@ -1,0 +1,24 @@
+Hãy đóng vai một chuyên gia thiết kế học liệu và họa sĩ kịch bản truyện tranh. Nhiệm vụ của bạn là đọc nội dung bài học dưới đây từ tài liệu được cung cấp, chắt lọc toàn bộ kiến thức trọng tâm, TỰ ĐỘNG TRA CỨU SỐ TRANG của bài học đó, và ĐÓNG GÓI thành một kịch bản truyện tranh (prompt) để tôi mang sang ChatGPT (DALL-E) hoặc Midjourney tạo ảnh.
+
+--- [THÔNG TIN ĐẦU VÀO] ---
+- [TEN_BAI]: <NHẬP TÊN BÀI>
+- [MON_HOC]: <NHẬP MÔN HỌC/TÊN SÁCH GIÁO KHOA VÀ LỚP>
+- [TEN_TRUYEN]: <NHẬP TÊN TRUYỆN/PHONG CÁCH>
+- [KICH_THUOC]: <NHẬP TỈ LỆ KHUNG HÌNH>
+- [SO_LUONG_ANH]: <NHẬP BỐ CỤC LƯỚI KHUNG HÌNH HOẶC "Auto">
+
+--- [YÊU CẦU ĐẦU RA (OUTPUT)] ---
+Tuyệt đối KHÔNG giao tiếp lan man. Đầu ra của bạn chỉ được phép là MỘT KHỐI VĂN BẢN DUY NHẤT có định dạng chính xác như sau:
+
+Hãy đóng vai một họa sĩ truyện tranh chuyên nghiệp. Sử dụng công cụ tạo ảnh (như DALL-E/Midjourney) để vẽ một trang truyện tranh (comic page) theo đúng phong cách nét vẽ của bộ truyện [TEN_TRUYEN], nhằm minh họa toàn bộ kiến thức cho [TEN_BAI] môn [MON_HOC].
+
+Yêu cầu kỹ thuật cho bức ảnh:
+- Tỉ lệ khung hình (Aspect ratio): [KICH_THUOC]
+- Bố cục trang (Grid layout): [LƯU Ý CHO AI: Nếu đầu vào [SO_LUONG_ANH] là "Auto", hãy ghi yêu cầu là: "Tự động phân bổ bố cục động (dynamic layout) với ít nhất 5 khung hình, các khung không cần bằng nhau, ưu tiên dành 1 khung hình có kích thước lớn nhất ở trung tâm để làm rõ nội dung kiến thức quan trọng nhất." Nếu đầu vào là một con số cụ thể, hãy ghi: "Chia thành [SO_LUONG_ANH] khung hình rõ ràng."]
+- TIÊU ĐỀ: Tên bài học [TEN_BAI] phải được hiển thị bằng phong cách CHỮ NỔI 3D (3D embossed/pop-out text) rực rỡ, bắt mắt và có chiều sâu ở phía trên cùng của trang truyện. Ngay bên dưới tiêu đề chính, thêm tên sách giáo khoa, lớp và SỐ TRANG MÀ BẠN TỰ TÌM ĐƯỢC TRONG TÀI LIỆU với định dạng: [MON_HOC] (Trang X - Y) bằng font chữ nhỏ hơn. Có thêm số Zalo để liên hệ: 0916941504
+
+Yêu cầu chi tiết cho TỪNG KHUNG HÌNH (Màu sắc tươi sáng, nét vẽ sinh động, có bong bóng thoại chứa text tiếng Việt ngắn gọn). Hãy dàn trải lượng kiến thức của bài học cho khớp với tổng số lượng khung hình (nếu "Auto" thì tự linh hoạt số lượng và chỉ định kích thước to/nhỏ cho từng khung) theo cấu trúc sau:
+
+- Khung 1 (Tình huống mở đầu): [Mô tả hình ảnh các nhân vật chính đang gặp một vấn đề liên quan trực tiếp đến hiện tượng thực tế của bài học]. Lời thoại: "[1 câu dẫn dắt]".
+- Khung 2 đến Khung áp chót (Diễn biến và Giải thích): [Mô tả nhân vật dùng bảo bối/đạo cụ để từng bước giải thích kiến thức bài học. Nếu là khung hình lớn theo bố cục Auto, hãy miêu tả thật chi tiết công thức hoặc định luật trọng tâm]. Lời thoại: "[Giải thích kiến thức hài hước]".
+- Khung cuối cùng (Kết luận/Vận dụng): [Mô tả tình huống các nhân vật áp dụng kiến thức vào thực tế]. Lời thoại: "[Câu chốt ghi nhớ]".
