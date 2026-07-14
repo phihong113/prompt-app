@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Copy, Check, Loader2, Sparkles, Download, Image as ImageIcon, Trash2, FileText, Palette, Wand2, CopyCheck, Globe } from "lucide-react";
 
 export default function Home() {
@@ -47,6 +47,31 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
   const [result, setResult] = useState<any>(null);
   const [copiedResult, setCopiedResult] = useState(false);
+
+  // Cropper Tool states
+  const [cropImageBase64, setCropImageBase64] = useState<string>("");
+  const [cropRows, setCropRows] = useState(2);
+  const [cropCols, setCropCols] = useState(4);
+  const [croppedImages, setCroppedImages] = useState<{ id: string, url: string }[]>([]);
+  const [rowDividers, setRowDividers] = useState<number[]>([]);
+  const [colDividers, setColDividers] = useState<number[]>([]);
+  const imageContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const newRowDividers = [];
+    for (let i = 1; i < cropRows; i++) {
+      newRowDividers.push((i / cropRows) * 100);
+    }
+    setRowDividers(newRowDividers);
+  }, [cropRows]);
+
+  useEffect(() => {
+    const newColDividers = [];
+    for (let i = 1; i < cropCols; i++) {
+      newColDividers.push((i / cropCols) * 100);
+    }
+    setColDividers(newColDividers);
+  }, [cropCols]);
 
   // State for Step 2
   const [promptCount, setPromptCount] = useState("3");
@@ -105,6 +130,87 @@ Xuống dòng mỗi bài và có dòng line, kèm số thứ tự...`;
   const handleRemoveImage = () => {
     setImageFile(null);
     setImageBase64("");
+  };
+
+  const handleMouseDown = (type: 'row'|'col', index: number) => {
+    const onMouseMove = (e: MouseEvent) => {
+      if (!imageContainerRef.current) return;
+      const rect = imageContainerRef.current.getBoundingClientRect();
+      if (type === 'col') {
+        let percent = ((e.clientX - rect.left) / rect.width) * 100;
+        percent = Math.max(0, Math.min(100, percent));
+        setColDividers(prev => { const n = [...prev]; n[index] = percent; return n; });
+      } else {
+        let percent = ((e.clientY - rect.top) / rect.height) * 100;
+        percent = Math.max(0, Math.min(100, percent));
+        setRowDividers(prev => { const n = [...prev]; n[index] = percent; return n; });
+      }
+    };
+    const onMouseUp = () => {
+      document.removeEventListener('mousemove', onMouseMove);
+      document.removeEventListener('mouseup', onMouseUp);
+    };
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseup', onMouseUp);
+  };
+
+  const handleCropImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setCropImageBase64(reader.result as string);
+        setCroppedImages([]); // reset on new upload
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleCrop = () => {
+    if (!cropImageBase64) return;
+    const img = new Image();
+    img.src = cropImageBase64;
+    img.onload = () => {
+      const newCropped = [];
+      let count = 1;
+
+      const getRowBounds = (r: number) => {
+        const top = r === 0 ? 0 : rowDividers[r - 1] / 100 * img.height;
+        const bottom = r === cropRows - 1 ? img.height : rowDividers[r] / 100 * img.height;
+        return { top, bottom, height: bottom - top };
+      };
+      
+      const getColBounds = (c: number) => {
+        const left = c === 0 ? 0 : colDividers[c - 1] / 100 * img.width;
+        const right = c === cropCols - 1 ? img.width : colDividers[c] / 100 * img.width;
+        return { left, right, width: right - left };
+      };
+
+      for (let r = 0; r < cropRows; r++) {
+        for (let c = 0; c < cropCols; c++) {
+          const row = getRowBounds(r);
+          const col = getColBounds(c);
+          
+          if (row.height <= 0 || col.width <= 0) continue;
+
+          const canvas = document.createElement("canvas");
+          canvas.width = col.width;
+          canvas.height = row.height;
+          const ctx = canvas.getContext("2d");
+          if (ctx) {
+            ctx.drawImage(
+              img,
+              col.left, row.top, col.width, row.height,
+              0, 0, col.width, row.height
+            );
+            const numStr = count < 10 ? `0${count}` : `${count}`;
+            newCropped.push({ id: numStr, url: canvas.toDataURL("image/png") });
+            count++;
+          }
+        }
+      }
+      setCroppedImages(newCropped);
+    };
   };
 
   const handleGenerate = async (e: React.FormEvent) => {
@@ -710,7 +816,7 @@ Xuống dòng mỗi bài và có dòng line, kèm số thứ tự...`;
                   onClick={() => setToolTab("slot2")}
                   className={`px-6 py-3 rounded-xl font-bold transition-all duration-300 whitespace-nowrap ${toolTab === "slot2" ? "bg-white text-blue-600 shadow-md transform scale-105" : "text-gray-600 hover:text-gray-800 hover:bg-gray-300"}`}
                 >
-                  Slot 2: tạo sẵn chưa dùng
+                  Cắt ảnh
                 </button>
                 <button
                   onClick={() => setToolTab("slot3")}
@@ -784,10 +890,130 @@ Xuống dòng mỗi bài và có dòng line, kèm số thứ tự...`;
               )}
 
               {toolTab === "slot2" && (
-                <div className="flex flex-col items-center justify-center p-20 bg-white rounded-2xl shadow-sm border border-gray-200 animate-in fade-in">
-                  <Sparkles className="w-16 h-16 text-gray-300 mb-4" />
-                  <h2 className="text-2xl font-bold text-gray-800">Slot 2</h2>
-                  <p className="text-gray-500 mt-2">Tính năng này đang được phát triển...</p>
+                <div className="flex flex-col bg-white rounded-2xl shadow-sm border border-gray-200 p-8 animate-in fade-in">
+                  <div className="flex items-center gap-3 mb-6">
+                    <ImageIcon className="w-8 h-8 text-blue-600" />
+                    <h2 className="text-2xl font-bold text-gray-800">Công cụ Cắt Ảnh</h2>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {/* Cột trái: Cài đặt và Upload */}
+                    <div className="space-y-6">
+                      <div className="bg-blue-50 p-6 rounded-xl border border-blue-100">
+                        <label className="block text-sm font-semibold text-blue-900 mb-2">Tải ảnh lên</label>
+                        <input
+                          type="file"
+                          accept="image/*"
+                          onChange={handleCropImageUpload}
+                          className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-600 file:text-white hover:file:bg-blue-700 transition"
+                        />
+                      </div>
+
+                      <div className="flex gap-4">
+                        <div className="flex-1 bg-gray-50 p-4 rounded-xl border border-gray-200">
+                          <label className="block text-sm font-medium text-gray-700 mb-2">Số lượng Hàng</label>
+                          <input 
+                            type="number" 
+                            min="1" 
+                            value={cropRows} 
+                            onChange={(e) => setCropRows(parseInt(e.target.value) || 1)}
+                            className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none"
+                          />
+                        </div>
+                        <div className="flex-1 bg-gray-50 p-4 rounded-xl border border-gray-200">
+                          <label className="block text-sm font-medium text-gray-700 mb-2">Số lượng Cột</label>
+                          <input 
+                            type="number" 
+                            min="1" 
+                            value={cropCols} 
+                            onChange={(e) => setCropCols(parseInt(e.target.value) || 1)}
+                            className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none"
+                          />
+                        </div>
+                      </div>
+
+                      <button
+                        onClick={handleCrop}
+                        disabled={!cropImageBase64}
+                        className={`w-full py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 transition-all shadow-md ${cropImageBase64 ? 'bg-blue-600 hover:bg-blue-700 text-white' : 'bg-gray-300 text-gray-500 cursor-not-allowed'}`}
+                      >
+                        <Sparkles className="w-6 h-6" /> Thực hiện Cắt Ảnh
+                      </button>
+                    </div>
+
+                    {/* Cột phải: Preview ảnh gốc với lưới cắt */}
+                    <div className="bg-gray-100 rounded-xl border border-gray-200 p-2 flex items-center justify-center min-h-[300px] overflow-hidden relative group">
+                      {cropImageBase64 ? (
+                        <div ref={imageContainerRef} className="relative inline-block max-w-full max-h-full select-none">
+                          <img src={cropImageBase64} alt="Original to crop" className="max-w-full max-h-[500px] object-contain block pointer-events-none" style={{ WebkitUserDrag: 'none' }} />
+                          
+                          {/* Render vertical lines for columns */}
+                          {colDividers.map((pct, idx) => (
+                            <div 
+                              key={`col-${idx}`}
+                              className="absolute top-0 bottom-0 w-2 bg-red-500/50 hover:bg-red-600 cursor-col-resize z-10 flex items-center justify-center group/line -ml-1"
+                              style={{ left: `${pct}%` }}
+                              onMouseDown={() => handleMouseDown('col', idx)}
+                            >
+                              <div className="w-4 h-8 bg-red-600 rounded-sm opacity-0 group-hover/line:opacity-100 shadow-md transition-opacity"></div>
+                            </div>
+                          ))}
+
+                          {/* Render horizontal lines for rows */}
+                          {rowDividers.map((pct, idx) => (
+                            <div 
+                              key={`row-${idx}`}
+                              className="absolute left-0 right-0 h-2 bg-red-500/50 hover:bg-red-600 cursor-row-resize z-10 flex items-center justify-center group/line -mt-1"
+                              style={{ top: `${pct}%` }}
+                              onMouseDown={() => handleMouseDown('row', idx)}
+                            >
+                              <div className="w-8 h-4 bg-red-600 rounded-sm opacity-0 group-hover/line:opacity-100 shadow-md transition-opacity"></div>
+                            </div>
+                          ))}
+                        </div>
+                      ) : (
+                        <p className="text-gray-400 text-sm">Chưa có ảnh. Vui lòng tải ảnh lên.</p>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Vùng hiển thị kết quả cắt */}
+                  {croppedImages.length > 0 && (
+                    <div className="mt-12 pt-8 border-t border-gray-200">
+                      <div className="flex justify-between items-center mb-6">
+                        <h3 className="text-xl font-bold text-gray-800">Kết quả ({croppedImages.length} ảnh)</h3>
+                        <button
+                          onClick={() => {
+                            croppedImages.forEach((img) => {
+                              const a = document.createElement("a");
+                              a.href = img.url;
+                              a.download = `${img.id}.png`;
+                              a.click();
+                            });
+                          }}
+                          className="px-6 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-semibold flex items-center gap-2 shadow-sm transition"
+                        >
+                          <Download className="w-5 h-5" /> Tải toàn bộ
+                        </button>
+                      </div>
+                      
+                      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                        {croppedImages.map((img) => (
+                          <div key={img.id} className="bg-gray-50 border border-gray-200 rounded-xl p-2 flex flex-col items-center gap-2 hover:shadow-md transition">
+                            <span className="text-xs font-bold text-gray-500 bg-gray-200 px-2 py-1 rounded-md w-full text-center">{img.id}.png</span>
+                            <img src={img.url} alt={`Cropped ${img.id}`} className="w-full h-auto object-contain rounded border border-gray-100" />
+                            <a 
+                              href={img.url} 
+                              download={`${img.id}.png`}
+                              className="text-xs text-blue-600 hover:text-blue-800 font-semibold mt-1"
+                            >
+                              Tải về
+                            </a>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               )}
 
