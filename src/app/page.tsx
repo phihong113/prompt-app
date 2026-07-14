@@ -73,10 +73,13 @@ Xuống dòng mỗi bài và có dòng line, kèm số thứ tự...`;
         setLoadingPrompts(false);
       });
 
-    fetch("/PROMPT_tao_Word.txt")
-      .then(res => res.text())
+    fetch("/PROMPT_Tao_Word_NotebookLM.txt")
+      .then(res => {
+        if (!res.ok) throw new Error("Network response was not ok");
+        return res.text();
+      })
       .then(text => setLessonPlanPrompt(text))
-      .catch(err => console.error(err));
+      .catch(err => console.error("Error fetching lesson plan prompt:", err));
 
     fetch("/Prompt_Truyen_Tranh.txt")
       .then(res => {
