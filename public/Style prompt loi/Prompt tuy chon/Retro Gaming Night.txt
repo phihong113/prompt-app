@@ -1,0 +1,186 @@
+{
+  "project_type": "Infographic - 8-Bit Arcade Đêm",
+  "language": "vi",
+  "main_variable": {
+    "[BAI]": "Tên bài học, chủ đề hoặc unit cần tổng hợp kiến thức"
+  },
+  "task": "Tạo một infographic tổng hợp kiến thức cho [BAI] dựa trên nguồn người dùng cung cấp.[cite: 5]",
+  "source_input": {
+    "accepted_sources": [
+      "Ảnh bài học",
+      "File PDF / Word / PowerPoint",
+      "Link URL",
+      "Văn bản dán trực tiếp"
+    ],
+    "processing_rule": "Đọc, phân tích nguồn và bóc tách kiến thức trọng tâm của [BAI]. Không dùng lại nội dung, ví dụ, thuật ngữ hoặc hình minh họa của bài mẫu cũ.[cite: 5]"
+  },
+  "content_scope": {
+    "rule": "Chỉ trình bày kiến thức liên quan trực tiếp đến [BAI].[cite: 5]",
+    "focus": [
+      "Khái niệm chính",
+      "Đặc điểm quan trọng",
+      "Thành phần hoặc cấu trúc nếu có",
+      "Phân loại hoặc nhóm kiến thức",
+      "Ví dụ minh họa",
+      "Ứng dụng thực tế nếu phù hợp",
+      "Ghi nhớ nhanh cuối bài"
+    ],
+    "avoid": [
+      "Không đưa nội dung ngoài chủ đề",
+      "Không giữ ví dụ của bài cũ",
+      "Không thêm kiến thức không cần thiết",
+      "Không nhồi chữ quá dày"
+    ]
+  },
+  "format": {
+    "ratio": "9:16",
+    "orientation": "poster dọc",
+    "usage": "Dùng để học tập, ôn bài nhanh, đăng mạng xã hội hoặc in poster học sinh.[cite: 5]"
+  },
+  "layout_config": {
+    "style": "Giao diện máy Arcade Retro, Pixel Art 8-bit",
+    "composition": "Bố cục dọc chia theo 'Level' (Cấp độ), thông tin đặt trong các khối block vuông.",
+    "reading_flow": "Đi từ trên xuống dưới theo đường di chuyển của nhân vật game.",
+    "visual_density": "Trống trải ở nền, thông tin dồn vào các khung hộp thoại (dialogue box)."
+  },
+  "design_style": {
+    "overall_feel": ["Giải trí", "Cổ điển", "Năng động", "Thú vị"],
+    "line_style": "Đường viền răng cưa (pixelated), khung vuông vức góc cạnh.",
+    "paper_style": "Nền đen tuyền (Pitch black) hoặc bầu trời sao pixel.",
+    "decorations": ["Thanh máu HP", "Đồng xu pixel", "Rương kho báu", "Tay cầm Arcade"]
+  },
+  "color_palette": {
+    "background": "Đen nhám Arcade (#111111)",
+    "main_title": "Đỏ tươi hoặc Vàng Pixel",
+    "section_colors": ["Khung ống nước xanh lá", "Khung gạch nâu", "Khung menu xanh dương"],
+    "highlight_rule": "Sử dụng màu tương phản mạnh, không đổ bóng mờ (solid shadow).",
+    "color_rule": "Màu sắc rực rỡ (Cyan, Magenta, Yellow) trên nền đen."
+  },
+  "typography": {
+    "main_title": {
+      "style": "Font Pixel to, dày, có bóng đổ khối cứng",
+      "placement": "Căn giữa"
+    },
+    "section_title": {
+      "style": "Chữ pixel màu trắng đặt trong hộp thoại game",
+      "numbering": "LVL 1, LVL 2"
+    },
+    "body_text": {
+      "style": "Font chữ pixel gọn gàng, đều nét"
+    },
+    "keywords": {
+      "style": "Màu nổi, có icon ngôi sao pixel bên cạnh"
+    }
+  },
+  "illustration_style": {
+    "style": "Pixel Art 8-bit, màu phẳng (flat color).",
+    "image_types": ["Nhân vật game", "Khung thoại pixel", "Vật phẩm (Kiếm, Khiên, Lọ thuốc)"]
+  },
+  "infographic_structure": {
+    "header": {
+      "content": [
+        "Tiêu đề chính: [BAI]",
+        "Phụ đề: Tổng hợp kiến thức"
+      ],
+      "visual_elements": [
+        "Icon học tập liên quan đến [BAI]",
+        "Đường gạch lượn sóng dưới tiêu đề",
+        "Sticker nhỏ"
+      ]
+    },
+    "section_1": {
+      "title": "1. Khái niệm trọng tâm",
+      "layout": "Khung bo góc ở phần trên",
+      "content_rule": [
+        "Nêu định nghĩa ngắn gọn",
+        "Trình bày 2–4 ý cốt lõi",
+        "Dùng gạch đầu dòng",
+        "Kèm icon hoặc sơ đồ mini"
+      ]
+    },
+    "section_2": {
+      "title": "2. Đặc điểm / Thành phần chính",
+      "layout": "Khung riêng bên dưới phần khái niệm",
+      "content_rule": [
+        "Bóc tách đặc điểm quan trọng",
+        "Nếu có cấu tạo, trình bày bằng sơ đồ",
+        "Nếu có tiến trình, dùng mũi tên",
+        "Nếu có nhiều nhóm ý, chia nhánh nhỏ"
+      ]
+    },
+    "section_3": {
+      "title": "3. Phân loại / Nhóm kiến thức",
+      "layout": "Chia thành 3–4 thẻ kiến thức",
+      "content_rule": [
+        "Tự xác định các nhóm kiến thức chính",
+        "Mỗi thẻ gồm tên nhóm, mô tả ngắn, 2–3 ý chính, ví dụ và hình minh họa",
+        "Các thẻ thống nhất về kích thước, màu sắc và cách trình bày"
+      ]
+    },
+    "section_4": {
+      "title": "4. Bảng so sánh / Hệ thống hóa",
+      "layout": "Bảng hoặc sơ đồ lớn ở nửa dưới infographic",
+      "content_rule": [
+        "Nếu có nhiều đối tượng cần so sánh, tạo bảng so sánh",
+        "Nếu không có nội dung so sánh, tạo bảng tóm tắt",
+        "Mỗi hàng là một ý hoặc nhóm kiến thức",
+        "Mỗi cột có tiêu chí rõ ràng"
+      ],
+      "suggested_columns": [
+        "Nội dung",
+        "Đặc điểm",
+        "Ví dụ",
+        "Ghi nhớ / Ứng dụng thực tế"
+      ]
+    },
+    "section_5": {
+      "title": "5. Ghi nhớ nhanh",
+      "layout": "Khung bo cong cuối trang",
+      "content_rule": [
+        "Viết 1–2 câu chốt lại bài học",
+        "Ưu tiên câu ngắn, dễ nhớ",
+        "Nhấn mạnh ý nghĩa hoặc cách vận dụng",
+        "Có thể thêm mẹo học nhanh"
+      ],
+      "visual_elements": [
+        "Icon bóng đèn",
+        "Ngôi sao",
+        "Trái tim nhỏ",
+        "Sticker ghi chú"
+      ]
+    }
+  },
+  "content_generation_rules": {
+    "summary_style": "Ngắn gọn, đúng trọng tâm, dễ học thuộc.[cite: 5]",
+    "language_rule": "Toàn bộ chữ hiển thị trên infographic phải bằng tiếng Việt, trừ thuật ngữ bắt buộc.[cite: 5]",
+    "text_amount": "Không nhồi chữ; ưu tiên từ khóa, cụm từ ngắn, sơ đồ và biểu tượng.[cite: 5]",
+    "accuracy_rule": "Bám sát nguồn người dùng cung cấp.[cite: 5]",
+    "student_friendly_rule": "Diễn đạt đơn giản, phù hợp học sinh.[cite: 5]",
+    "visual_learning_rule": "Mỗi phần nên có hình minh họa giúp ghi nhớ.[cite: 5]"
+  },
+  "user_options": {
+    "grade_level": "Tự động chọn theo [BAI] hoặc nguồn người dùng cung cấp",
+    "difficulty_level": "Cơ bản / Trung bình / Nâng cao / Ôn thi",
+    "layout_density": "Ít chữ nhiều hình / Cân bằng chữ và hình / Nhiều kiến thức nhưng vẫn dễ đọc",
+    "illustration_mode": "Pixel art",
+    "color_mode": "Tối màu",
+    "output_ratio": "9:16"
+  },
+  "must_have": [
+    "Tiêu đề chính là [BAI]",
+    "Phụ đề là Tổng hợp kiến thức",
+    "Các khối kiến thức đánh số rõ ràng",
+    "Có bảng hoặc sơ đồ hệ thống hóa",
+    "Có phần ghi nhớ nhanh cuối trang",
+    "Toàn bộ chữ bằng tiếng Việt"
+  ],
+  "must_avoid": [
+    "Không giữ nội dung bài mẫu cũ",
+    "Không dùng ví dụ không liên quan đến [BAI]",
+    "Không nhồi chữ quá dày",
+    "Không dùng màu quá chói",
+    "Không để bố cục rối",
+    "Không dùng hình sai chủ đề",
+    "Không tạo chữ lỗi hoặc sai chính tả"
+  ]
+}

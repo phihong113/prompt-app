@@ -1,0 +1,164 @@
+Hãy kết hợp tài liệu tôi gửi lên vào Prompt lõi.
+==================================================
+
+THÔNG TIN ĐẦU VÀO
+
+[TEN_TAI_LIEU]
+
+--------------------------------------------------
+
+[TU_BAI]
+
+Bài 1
+--------------------------------------------------
+[DEN_BAI]
+Bài 5
+
+==================================================
+
+NHIỆM VỤ
+
+Đọc nội dung tài liệu từ [TU_BAI] đến [DEN_BAI].
+
+Với mỗi bài học:
+
+1. Xác định tên bài.
+2. Phân tích nội dung trọng tâm.
+3. Chọn bố cục infographic phù hợp nhất.
+4. Chọn phong cách thiết kế phù hợp nhất.
+5. Sinh Prompt Infographic hoàn chỉnh.
+
+==================================================
+
+AI ĐƯỢC PHÉP CHỌN CÁC BỐ CỤC SAU
+
+[CẤU TRÚC]
+
+- Mind Map
+- Tree Diagram
+- Hierarchy Chart
+- Honeycomb
+
+[QUY TRÌNH]
+
+- Flowchart
+- Checklist Workflow
+- Funnel
+- Pipeline
+
+[HÀNH TRÌNH]
+
+- Journey Map
+- Roadmap
+- Treasure Map
+- Mountain Journey
+- Space Mission
+
+[SO SÁNH]
+
+- Before & After
+- VS Battle
+- Comparison Table
+- T-Chart
+
+[DỮ LIỆU]
+
+- Bar Chart
+- Line Chart
+- Pie Chart
+- Radar Chart
+- Dashboard
+
+[KỂ CHUYỆN]
+
+- Comic Strip
+- Story Board
+- Hero Journey
+- Detective Board
+
+[KIẾN THỨC NHANH]
+
+- Cheat Sheet
+- Flashcard Grid
+- Formula Wall
+- Quick Tips
+
+[HÌNH HỌC]
+
+- Annotated Diagram
+- Layer Diagram
+- Exploded Diagram
+- Cutaway View
+
+[GAME HOÁ]
+
+- Level Map
+- RPG Quest
+- Boss Battle
+- Skill Tree
+
+==================================================
+
+AI ĐƯỢC PHÉP CHỌN PHONG CÁCH
+
+- Modern Education
+- Minimalist Scandinavian
+- Flat Design
+- Glassmorphism
+- Neumorphism
+- Pop Art Comic
+- Retro Arcade
+- Vintage Newspaper
+- Detective Case File
+- Treasure Map
+- Space Mission
+- Mountain Journey
+- Cyberpunk
+- Blueprint Engineering
+- Futuristic HUD
+- Pixar Style
+- Anime Education
+
+==================================================
+
+QUY TẮC
+
+- Không chọn bố cục ngẫu nhiên.
+- Bố cục phải phù hợp bản chất kiến thức.
+- Không lặp lại bố cục liên tiếp nếu không cần thiết.
+- Không lặp lại phong cách liên tiếp nếu không cần thiết.
+- Ưu tiên trực quan hóa việc học.
+- Ưu tiên ít chữ, nhiều hình ảnh.
+- Phù hợp học sinh.
+
+==================================================
+
+OUTPUT
+
+# 01. [TÊN BÀI]
+
+Bố cục:
+[Tên bố cục]
+
+Phong cách:
+[Tên phong cách]
+
+Lý do lựa chọn:
+[Giải thích ngắn]
+
+Prompt:
+[Prompt hoàn chỉnh]
+
+--------------------------------------------------
+
+# 02. [TÊN BÀI]
+
+...
+
+--------------------------------------------------
+
+Tiếp tục cho đến [DEN_BAI].
+
+Không tạo ảnh.
+
+Chỉ xuất Prompt.

@@ -1,0 +1,235 @@
+
+#Vai trò là một Visual Notetaker chuyên nghiệp.
+#Nhiệm vụ: Bạn hãy nghiên cứu tài liệu tôi tải lên và viết thành outline chi tiết để tạo infoghaphic, sơ đồ tư duy theo bài học môn, sau đó tạo prompt json hoàn chỉnh với kiến thức từ dự liệu nguồn vào prompt lõi
+Đây là lõi của prompt  
+{
+  "project_type": "Infographic Tổng Hợp Kiến Thức Theo Phong Cách random",
+  "language": "vi",
+  "main_variable": {
+    "[BAI]": "Tên bài học, chủ đề hoặc unit cần tổng hợp kiến thức"
+  },
+  "task": "Tạo một infographic tổng hợp kiến thức cho [BAI] dựa trên nguồn người dùng cung cấp.",
+  "source_input": {
+    "accepted_sources": [
+      "Ảnh bài học",
+      "File PDF / Word / PowerPoint",
+      "Link URL",
+      "Văn bản dán trực tiếp"
+    ],
+    "processing_rule": "Đọc, phân tích nguồn và bóc tách kiến thức trọng tâm của [BAI]. Không dùng lại nội dung, ví dụ, thuật ngữ hoặc hình minh họa của bài mẫu cũ."
+  },
+  "content_scope": {
+    "rule": "Chỉ trình bày kiến thức liên quan trực tiếp đến [BAI].",
+    "focus": [
+      "Khái niệm chính",
+      "Đặc điểm quan trọng",
+      "Thành phần hoặc cấu trúc nếu có",
+      "Phân loại hoặc nhóm kiến thức",
+      "Ví dụ minh họa",
+      "Ứng dụng thực tế nếu phù hợp",
+      "Ghi nhớ nhanh cuối bài"
+    ],
+    "avoid": [
+      "Không đưa nội dung ngoài chủ đề",
+      "Không giữ ví dụ của bài cũ",
+      "Không thêm kiến thức không cần thiết",
+      "Không nhồi chữ quá dày"
+    ]
+  },
+  "format": {
+    "ratio": "9:16",
+    "orientation": "poster dọc",
+    "usage": "Dùng để học tập, ôn bài nhanh, đăng mạng xã hội hoặc in poster học sinh."
+  },
+  "layout_config": {
+    "style": "Sketchnote học tập, hand-drawn doodle, cute study note",
+    "composition": "Bố cục như trang vở ghi chú, chia thành các khối kiến thức rõ ràng, đánh số từ trên xuống dưới.",
+    "reading_flow": "Đọc từ trên xuống dưới, từ trái sang phải.",
+    "visual_density": "Cân bằng chữ và hình; có icon, sơ đồ, mũi tên, khung ghi chú nhưng vẫn thoáng."
+  },
+  "design_style": {
+    "overall_feel": [
+      "Sáng sủa",
+      "Dễ thương",
+      "Gần gũi học sinh",
+      "Trực quan",
+      "Dễ nhớ"
+    ],
+    "line_style": "Nét vẽ tay mềm, viền mảnh, bo góc nhẹ.",
+    "paper_style": "Nền trắng kem, trắng giấy vở hoặc xanh pastel rất nhạt.",
+    "decorations": [
+      "Icon học tập nhỏ",
+      "Đường gạch lượn sóng dưới tiêu đề",
+      "Sticker ghi chú",
+      "Mũi tên chỉ hướng",
+      "Khung ghi nhớ cuối trang"
+    ]
+  },
+  "color_palette": {
+    "background": "Trắng kem hoặc trắng giấy vở",
+    "main_title": "Đỏ tươi, đỏ san hô hoặc cam đỏ",
+    "section_colors": [
+      "Xanh dương pastel cho tiêu đề mục",
+      "Xanh lá pastel cho nhóm kiến thức",
+      "Vàng nhạt cho ghi chú",
+      "Hồng pastel cho ví dụ",
+      "Tím nhạt cho bảng hoặc khung phụ"
+    ],
+    "highlight_rule": "Dùng đỏ cho từ khóa, cam cho lưu ý, xanh lá cho ví dụ, xanh dương cho thuật ngữ.",
+    "color_rule": "Mỗi nhóm kiến thức có màu nhận diện riêng."
+  },
+  "typography": {
+    "main_title": {
+      "content": "[BAI]",
+      "style": "Chữ viết tay to, bo tròn, nổi bật",
+      "placement": "Căn giữa phía trên",
+      "effect": "Có gạch lượn sóng, tia nhấn hoặc doodle trang trí"
+    },
+    "subtitle": {
+      "content": "Tổng hợp kiến thức",
+      "style": "Nhỏ hơn tiêu đề chính, rõ ràng, thân thiện"
+    },
+    "section_title": {
+      "style": "Đậm, rõ, màu nổi bật",
+      "numbering": "Đánh số trong vòng tròn: 1, 2, 3, 4, 5..."
+    },
+    "body_text": {
+      "style": "Chữ rõ ràng, giống bút marker",
+      "rule": "Viết ngắn gọn, ưu tiên gạch đầu dòng, không dùng đoạn văn dài"
+    },
+    "keywords": {
+      "style": "Tô đậm, đổi màu hoặc gạch chân nhẹ",
+      "rule": "Chỉ nhấn mạnh từ khóa quan trọng"
+    }
+  },
+  "illustration_style": {
+    "style": "Cute educational doodle, hand-drawn icon, màu pastel, đơn giản nhưng dễ nhận biết.",
+    "visual_rule": "Mỗi khái niệm quan trọng có ít nhất một hình minh họa nhỏ.",
+    "image_types": [
+      "Icon vẽ tay",
+      "Sơ đồ mini",
+      "Mũi tên quy trình",
+      "Minh họa đơn giản",
+      "Sticker học tập",
+      "Biểu tượng ghi nhớ"
+    ],
+    "avoid": [
+      "Không dùng ảnh quá thực tế",
+      "Không dùng hình lệch chủ đề",
+      "Không chèn chữ tiếng Anh nếu không bắt buộc",
+      "Không dùng hình từ bài mẫu cũ"
+    ]
+  },
+  "infographic_structure": {
+    "header": {
+      "content": [
+        "Tiêu đề chính: [BAI]",
+        "Phụ đề: Tổng hợp kiến thức"
+      ],
+      "visual_elements": [
+        "Icon học tập liên quan đến [BAI]",
+        "Đường gạch lượn sóng dưới tiêu đề",
+        "Sticker nhỏ"
+      ]
+    },
+    "section_1": {
+      "title": "1. Khái niệm trọng tâm",
+      "layout": "Khung bo góc ở phần trên",
+      "content_rule": [
+        "Nêu định nghĩa ngắn gọn",
+        "Trình bày 2–4 ý cốt lõi",
+        "Dùng gạch đầu dòng",
+        "Kèm icon hoặc sơ đồ mini"
+      ]
+    },
+    "section_2": {
+      "title": "2. Đặc điểm / Thành phần chính",
+      "layout": "Khung riêng bên dưới phần khái niệm",
+      "content_rule": [
+        "Bóc tách đặc điểm quan trọng",
+        "Nếu có cấu tạo, trình bày bằng sơ đồ",
+        "Nếu có tiến trình, dùng mũi tên",
+        "Nếu có nhiều nhóm ý, chia nhánh nhỏ"
+      ]
+    },
+    "section_3": {
+      "title": "3. Phân loại / Nhóm kiến thức",
+      "layout": "Chia thành 3–4 thẻ kiến thức",
+      "content_rule": [
+        "Tự xác định các nhóm kiến thức chính",
+        "Mỗi thẻ gồm tên nhóm, mô tả ngắn, 2–3 ý chính, ví dụ và hình minh họa",
+        "Các thẻ thống nhất về kích thước, màu sắc và cách trình bày"
+      ]
+    },
+    "section_4": {
+      "title": "4. Bảng so sánh / Hệ thống hóa",
+      "layout": "Bảng hoặc sơ đồ lớn ở nửa dưới infographic",
+      "content_rule": [
+        "Nếu có nhiều đối tượng cần so sánh, tạo bảng so sánh",
+        "Nếu không có nội dung so sánh, tạo bảng tóm tắt",
+        "Mỗi hàng là một ý hoặc nhóm kiến thức",
+        "Mỗi cột có tiêu chí rõ ràng"
+      ],
+      "suggested_columns": [
+        "Nội dung",
+        "Đặc điểm",
+        "Ví dụ",
+        "Ghi nhớ / Ứng dụng thực tế"
+      ]
+    },
+    "section_5": {
+      "title": "5. Ghi nhớ nhanh",
+      "layout": "Khung bo cong cuối trang",
+      "content_rule": [
+        "Viết 1–2 câu chốt lại bài học",
+        "Ưu tiên câu ngắn, dễ nhớ",
+        "Nhấn mạnh ý nghĩa hoặc cách vận dụng",
+        "Có thể thêm mẹo học nhanh"
+      ],
+      "visual_elements": [
+        "Icon bóng đèn",
+        "Ngôi sao",
+        "Trái tim nhỏ",
+        "Sticker ghi chú"
+      ]
+    }
+  },
+"section_6": {},
+"section_7": {},
+"section_8": {},
+  "content_generation_rules": {
+    "summary_style": "Ngắn gọn, đúng trọng tâm, dễ học thuộc.",
+    "language_rule": "Toàn bộ chữ hiển thị trên infographic phải bằng tiếng Việt, trừ thuật ngữ bắt buộc.",
+    "text_amount": "Không nhồi chữ; ưu tiên từ khóa, cụm từ ngắn, sơ đồ và biểu tượng.",
+    "accuracy_rule": "Bám sát nguồn người dùng cung cấp.",
+    "student_friendly_rule": "Diễn đạt đơn giản, phù hợp học sinh.",
+    "visual_learning_rule": "Mỗi phần nên có hình minh họa giúp ghi nhớ."
+  },
+  "user_options": {
+    "grade_level": "Tự động chọn theo [BAI] hoặc nguồn người dùng cung cấp",
+    "difficulty_level": "Cơ bản / Trung bình / Nâng cao / Ôn thi",
+    "layout_density": "Ít chữ nhiều hình / Cân bằng chữ và hình / Nhiều kiến thức nhưng vẫn dễ đọc",
+    "illustration_mode": "Sketchnote học tập",
+    "color_mode": "Pastel sáng",
+    "output_ratio": "9:16"
+  },
+  "must_have": [
+    "Tiêu đề chính là [BAI]",
+    "Phụ đề là Tổng hợp kiến thức",
+    "Bố cục sketchnote học tập",
+    "Các khối kiến thức đánh số rõ ràng",
+    "Có bảng hoặc sơ đồ hệ thống hóa",
+    "Có hình minh họa doodle dễ thương",
+    "Có phần ghi nhớ nhanh cuối trang",
+    "Toàn bộ chữ bằng tiếng Việt"
+  ],
+  "must_avoid": [
+    "Không giữ nội dung bài mẫu cũ",
+    "Không dùng ví dụ không liên quan đến [BAI]",
+    "Không nhồi chữ quá dày",
+    "Không dùng màu quá chói",
+    "Không để bố cục rối",
+    "Không dùng hình sai chủ đề",
+    "Không tạo chữ lỗi hoặc sai chính tả"
+  ]
+}

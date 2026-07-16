@@ -4,7 +4,7 @@ import path from 'path';
 
 export async function GET() {
   try {
-    const basePath = 'G:\\AI 2025\\MathHub\\AI thuc chien giao vien\\Notebook\\Prompt quan trong\\web site chua Prompt\\prompt-app\\Style prompt lõi';
+    const basePath = path.join(process.cwd(), 'public', 'Style prompt loi');
     
     // Default response structure
     let responseData: any = {

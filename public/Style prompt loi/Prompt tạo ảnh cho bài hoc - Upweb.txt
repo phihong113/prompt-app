@@ -1,0 +1,8 @@
+“Hãy kết tài liệu tôi gửi lên vào prompt lõi, tạo ra 5 prompt tương ứng với 5 bài học trong sách giáo khoa Toán lớp 9 tập 1.
+#Tuỳ chọn prompt prompt lõi tạo ra bố cục, phong cách phù hợp với nội dung bài học.
+#Mỗi mỗi bài học có bố cục khác nhau.
+#Bố cục: infoghaphic, sơ đồ tư duy, sơ đồ câu, hành trình, dòng chảy.
+[BAI]
+Bài 1 đến Bài 5.
+Xuống dòng mỗi bài và có dòng line, kèm số thứ tự...”
+Thay đổi tên tài liệu, số lượng bài, thứ tự, thêm các thứ cần thiết.

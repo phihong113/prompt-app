@@ -1,0 +1,185 @@
+{
+  "project_type": "Infographic - Giao Diện Cyberpunk HUD",
+  "language": "vi",
+  "main_variable": {
+    "[BAI]": "Tên bài học, chủ đề hoặc unit cần tổng hợp kiến thức"
+  },
+  "task": "Tạo một infographic tổng hợp kiến thức cho [BAI] dựa trên nguồn người dùng cung cấp.[cite: 5]",
+  "source_input": {
+    "accepted_sources": [
+      "Ảnh bài học",
+      "File PDF / Word / PowerPoint",
+      "Link URL",
+      "Văn bản dán trực tiếp"
+    ],
+    "processing_rule": "Đọc, phân tích nguồn và bóc tách kiến thức trọng tâm của [BAI]. Không dùng lại nội dung, ví dụ, thuật ngữ hoặc hình minh họa của bài mẫu cũ.[cite: 5]"
+  },
+  "content_scope": {
+    "rule": "Chỉ trình bày kiến thức liên quan trực tiếp đến [BAI].[cite: 5]",
+    "focus": [
+      "Khái niệm chính",
+      "Đặc điểm quan trọng",
+      "Thành phần hoặc cấu trúc nếu có",
+      "Phân loại hoặc nhóm kiến thức",
+      "Ví dụ minh họa",
+      "Ứng dụng thực tế nếu phù hợp",
+      "Ghi nhớ nhanh cuối bài"
+    ],
+    "avoid": [
+      "Không đưa nội dung ngoài chủ đề",
+      "Không giữ ví dụ của bài cũ",
+      "Không thêm kiến thức không cần thiết",
+      "Không nhồi chữ quá dày"
+    ]
+  },
+  "format": {
+    "ratio": "9:16",
+    "orientation": "poster dọc",
+    "usage": "Dùng để học tập, ôn bài nhanh, đăng mạng xã hội hoặc in poster học sinh.[cite: 5]"
+  },
+  "layout_config": {
+    "style": "Sci-fi HUD, màn hình bảng điều khiển không gian",
+    "composition": "Chia lưới (grid) dạng dashboard công nghệ, kết nối bằng đường truyền dữ liệu.",
+    "reading_flow": "Đọc theo các đường mạch điện tử phát sáng.",
+    "visual_density": "Mật độ cao nhưng hệ thống, vuông vức."
+  },
+  "design_style": {
+    "overall_feel": ["Tương lai", "Công nghệ cao", "Đột phá", "Huyền bí"],
+    "line_style": "Viền phát sáng (neon glow), góc vát chéo 45 độ, nét thanh mảnh.",
+    "paper_style": "Nền đen bóng hoặc xanh không gian có lưới ma trận (cyber grid).",
+    "decorations": ["Hạt particle lơ lửng", "Màn hình radar", "Mạch điện tử", "Code chạy mờ"]
+  },
+  "color_palette": {
+    "background": "Đen tuyền hoặc Xanh Midnight đậm",
+    "main_title": "Cyan (Xanh lơ) phát sáng hoặc Magenta Neon",
+    "section_colors": ["Khung viền Xanh ngọc trong suốt", "Điểm nhấn Cam rực rỡ"],
+    "highlight_rule": "Từ khóa có hiệu ứng phát sáng mờ (glow text).",
+    "color_rule": "Chế độ Dark Mode với viền Neon nổi bật."
+  },
+  "typography": {
+    "main_title": {
+      "style": "Font Mecha/Sci-fi góc cạnh, phát sáng",
+      "placement": "Góc trên trái"
+    },
+    "section_title": {
+      "style": "Chữ điện tử, gạch chân nét đứt, đánh số 01, 02..."
+    },
+    "body_text": {
+      "style": "Font Monospace (code máy tính) nét mỏng"
+    },
+    "keywords": {
+      "style": "Chữ in hoa, màu Neon tương phản"
+    }
+  },
+  "illustration_style": {
+    "style": "Hologram mờ ảo, vector công nghệ nét mảnh.",
+    "image_types": ["Mô hình 3D wireframe", "Biểu đồ radar", "Icon neon phát sáng"]
+  },
+  "infographic_structure": {
+    "header": {
+      "content": [
+        "Tiêu đề chính: [BAI]",
+        "Phụ đề: Tổng hợp kiến thức"
+      ],
+      "visual_elements": [
+        "Icon học tập liên quan đến [BAI]",
+        "Đường gạch lượn sóng dưới tiêu đề",
+        "Sticker nhỏ"
+      ]
+    },
+    "section_1": {
+      "title": "1. Khái niệm trọng tâm",
+      "layout": "Khung bo góc ở phần trên",
+      "content_rule": [
+        "Nêu định nghĩa ngắn gọn",
+        "Trình bày 2–4 ý cốt lõi",
+        "Dùng gạch đầu dòng",
+        "Kèm icon hoặc sơ đồ mini"
+      ]
+    },
+    "section_2": {
+      "title": "2. Đặc điểm / Thành phần chính",
+      "layout": "Khung riêng bên dưới phần khái niệm",
+      "content_rule": [
+        "Bóc tách đặc điểm quan trọng",
+        "Nếu có cấu tạo, trình bày bằng sơ đồ",
+        "Nếu có tiến trình, dùng mũi tên",
+        "Nếu có nhiều nhóm ý, chia nhánh nhỏ"
+      ]
+    },
+    "section_3": {
+      "title": "3. Phân loại / Nhóm kiến thức",
+      "layout": "Chia thành 3–4 thẻ kiến thức",
+      "content_rule": [
+        "Tự xác định các nhóm kiến thức chính",
+        "Mỗi thẻ gồm tên nhóm, mô tả ngắn, 2–3 ý chính, ví dụ và hình minh họa",
+        "Các thẻ thống nhất về kích thước, màu sắc và cách trình bày"
+      ]
+    },
+    "section_4": {
+      "title": "4. Bảng so sánh / Hệ thống hóa",
+      "layout": "Bảng hoặc sơ đồ lớn ở nửa dưới infographic",
+      "content_rule": [
+        "Nếu có nhiều đối tượng cần so sánh, tạo bảng so sánh",
+        "Nếu không có nội dung so sánh, tạo bảng tóm tắt",
+        "Mỗi hàng là một ý hoặc nhóm kiến thức",
+        "Mỗi cột có tiêu chí rõ ràng"
+      ],
+      "suggested_columns": [
+        "Nội dung",
+        "Đặc điểm",
+        "Ví dụ",
+        "Ghi nhớ / Ứng dụng thực tế"
+      ]
+    },
+    "section_5": {
+      "title": "5. Ghi nhớ nhanh",
+      "layout": "Khung bo cong cuối trang",
+      "content_rule": [
+        "Viết 1–2 câu chốt lại bài học",
+        "Ưu tiên câu ngắn, dễ nhớ",
+        "Nhấn mạnh ý nghĩa hoặc cách vận dụng",
+        "Có thể thêm mẹo học nhanh"
+      ],
+      "visual_elements": [
+        "Icon bóng đèn",
+        "Ngôi sao",
+        "Trái tim nhỏ",
+        "Sticker ghi chú"
+      ]
+    }
+  },
+  "content_generation_rules": {
+    "summary_style": "Ngắn gọn, đúng trọng tâm, dễ học thuộc.[cite: 5]",
+    "language_rule": "Toàn bộ chữ hiển thị trên infographic phải bằng tiếng Việt, trừ thuật ngữ bắt buộc.[cite: 5]",
+    "text_amount": "Không nhồi chữ; ưu tiên từ khóa, cụm từ ngắn, sơ đồ và biểu tượng.[cite: 5]",
+    "accuracy_rule": "Bám sát nguồn người dùng cung cấp.[cite: 5]",
+    "student_friendly_rule": "Diễn đạt đơn giản, phù hợp học sinh.[cite: 5]",
+    "visual_learning_rule": "Mỗi phần nên có hình minh họa giúp ghi nhớ.[cite: 5]"
+  },
+  "user_options": {
+    "grade_level": "Tự động chọn theo [BAI] hoặc nguồn người dùng cung cấp",
+    "difficulty_level": "Cơ bản / Trung bình / Nâng cao / Ôn thi",
+    "layout_density": "Ít chữ nhiều hình / Cân bằng chữ và hình / Nhiều kiến thức nhưng vẫn dễ đọc",
+    "illustration_mode": "Sci-fi",
+    "color_mode": "Dark mode Neon",
+    "output_ratio": "9:16"
+  },
+  "must_have": [
+    "Tiêu đề chính là [BAI]",
+    "Phụ đề là Tổng hợp kiến thức",
+    "Các khối kiến thức đánh số rõ ràng",
+    "Có bảng hoặc sơ đồ hệ thống hóa",
+    "Có phần ghi nhớ nhanh cuối trang",
+    "Toàn bộ chữ bằng tiếng Việt"
+  ],
+  "must_avoid": [
+    "Không giữ nội dung bài mẫu cũ",
+    "Không dùng ví dụ không liên quan đến [BAI]",
+    "Không nhồi chữ quá dày",
+    "Không dùng màu quá chói",
+    "Không để bố cục rối",
+    "Không dùng hình sai chủ đề",
+    "Không tạo chữ lỗi hoặc sai chính tả"
+  ]
+}
