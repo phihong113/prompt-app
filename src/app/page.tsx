@@ -945,7 +945,7 @@ Xuống dòng mỗi bài và có dòng line, kèm số thứ tự...`;
                     <div className="bg-gray-100 rounded-xl border border-gray-200 p-2 flex items-center justify-center min-h-[300px] overflow-hidden relative group">
                       {cropImageBase64 ? (
                         <div ref={imageContainerRef} className="relative inline-block max-w-full max-h-full select-none">
-                          <img src={cropImageBase64} alt="Original to crop" className="max-w-full max-h-[500px] object-contain block pointer-events-none" style={{ WebkitUserDrag: 'none' }} />
+                          <img src={cropImageBase64} alt="Original to crop" className="max-w-full max-h-[500px] object-contain block pointer-events-none" draggable={false} />
                           
                           {/* Render vertical lines for columns */}
                           {colDividers.map((pct, idx) => (
